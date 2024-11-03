@@ -1,5 +1,7 @@
-# This is Robo-wiz!! 
+# This is Robo-wiz!! This is my first code on Git
 # This code is a calculator
+
+# 2024-11-03 - Added check for zero division rule
 
 print("------------ code # 1 ------------")
 
@@ -24,15 +26,18 @@ else:
         # this changes the inputs to decimals/float    
         num1 = float(num1)
         num2 = float(num2)
-        # these if and elif statements add/subtract/multiply/divide the numbers and printing out the answer
-        if symbol == "+":
-            print("your answer is:",round(num1+num2,5))
-        elif symbol == "-":
-            print("your answer is:",round(num1-num2,5))
-        elif symbol == "*":
-            print("your answer is:",round(num1*num2,5))
-        elif symbol == "/":
-            print("your answer is:",round(num1/num2,5))
+        if num2 == 0.0 and symbol == "/":
+          print("Have you ever heard about the division by zero rule? It is impossible to divide by zero in math. Please try again with no zero as second number. You can put zero as the first number but not as the second.")
+        else:
+          # these if and elif statements add/subtract/multiply/divide the numbers and printing out the answer
+            if symbol == "+":
+              print("your answer is:",round(num1+num2,5))
+            elif symbol == "-":
+              print("your answer is:",round(num1-num2,5))
+            elif symbol == "*":
+              print("your answer is:",round(num1*num2,5))
+            elif symbol == "/":
+              print("your answer is:",round(num1/num2,5))
     # if one of the inputs contains letters/string, then this code will print and program will be terminated
     else:
         print("Your input can not be used in an real equation, maybe you added an extra charecter? Please try again with numbers (positive or negative)")
